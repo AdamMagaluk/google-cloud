@@ -33,10 +33,14 @@
           "label": "Kind",
           "name": "kind",
           "plugin-function": {
-            "method": "POST",
-            "widget": "outputSchema",
+            "label": "Get Schema",
+            "widget": "getSchema",
             "output-property": "schema",
-            "plugin-method": "getSchema"
+            "omitProperties": [
+              {
+                "name": "schema"
+              }
+            ]
           }
         },
         {

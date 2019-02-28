@@ -47,14 +47,14 @@
             "placeholder": "Table to read from"
           },
           "plugin-function": {
-            "method": "POST",
             "label": "Get Schema",
-            "widget": "outputSchema",
+            "widget": "getSchema",
             "output-property": "schema",
-            "plugin-method": "getSchema",
-            "position": "bottom",
-            "multiple-inputs": true,
-            "button-class": "btn-hydrator"
+            "omitProperties": [
+              {
+                "name": "schema"
+              }
+            ]
           }
         },
         {
