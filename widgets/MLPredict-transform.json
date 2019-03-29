@@ -1,0 +1,80 @@
+
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name": "Google Cloud ML Predict",
+  "configuration-groups": [
+    {
+      "label": "Basic",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Audio Field",
+          "name": "audiofield",
+          "widget-attributes" : {
+            "placeholder" : "Input field containing raw audio data"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Transcript Parts Field",
+          "name": "transcriptionPartsField",
+          "widget-attributes" : {
+            "placeholder" : "Field name to use to store all the different chunks of transcription"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Transcription Text Field",
+          "name": "transcriptionTextField",
+          "widget-attributes" : {
+            "default" : "transcript"
+          },
+          "plugin-function": {
+            "method": "POST",
+            "label": "Get Schema",
+            "widget": "outputSchema",
+            "output-property": "schema",
+            "plugin-method": "getSchema",
+            "position": "bottom",
+            "multiple-inputs": false,
+            "button-class": "btn-hydrator"
+          }
+        }
+      ]
+    },
+    {
+      "label" : "Credentials",
+      "properties" : [
+        {
+          "widget-type": "textbox",
+          "label": "Service Account File Path",
+          "name": "serviceFilePath",
+          "widget-attributes" : {
+            "default": "auto-detect"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "schema",
+      "widget-type": "schema",
+      "widget-attributes": {
+        "schema-types": [
+          "boolean",
+          "int",
+          "long",
+          "float",
+          "double",
+          "bytes",
+          "string",
+          "map<string, string>"
+        ],
+        "schema-default-type": "string"
+      }
+    }
+  ]
+}
