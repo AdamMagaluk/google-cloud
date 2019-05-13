@@ -10,26 +10,50 @@
       "properties": [
         {
           "widget-type": "textbox",
-          "label": "Audio Field",
-          "name": "audiofield",
+          "label": "Model ID",
+          "name": "model",
           "widget-attributes" : {
-            "placeholder" : "Input field containing raw audio data"
+            "placeholder" : "Cloud ML Model ID"
           }
         },
         {
           "widget-type": "textbox",
-          "label": "Transcript Parts Field",
-          "name": "transcriptionPartsField",
+          "label": "Model Version",
+          "name": "modelVersion",
           "widget-attributes" : {
-            "placeholder" : "Field name to use to store all the different chunks of transcription"
+            "placeholder" : "Cloud ML Model Version"
           }
         },
         {
           "widget-type": "textbox",
-          "label": "Transcription Text Field",
-          "name": "transcriptionTextField",
+          "label": "Instance Field",
+          "name": "instancesfield",
           "widget-attributes" : {
-            "default" : "transcript"
+            "placeholder" : "Field name to use as an input."
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Output Field",
+          "name": "outputfield",
+          "widget-attributes" : {
+            "placeholder" : "Field name to use to store the output ML prediction API.",
+            "default" : "prediction"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Predictions Field",
+          "name": "predictionfield",
+          "widget-attributes" : {
+            "placeholder" : "The JSON field in the returned ML prediction to parse. Defaults to the root."
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Output Schema",
+          "name": "schema",
+          "widget-attributes" : {
           },
           "plugin-function": {
             "method": "POST",

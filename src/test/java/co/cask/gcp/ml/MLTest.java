@@ -60,7 +60,7 @@ public class MLTest {
     GoogleCredential credential = GoogleCredential.getApplicationDefault();
     HttpRequestFactory requestFactory = httpTransport.createRequestFactory(credential);
 
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 2; i++) {
       HttpRequest request = requestFactory.buildPostRequest(url, content);
       String response = request.execute().parseAsString();
       System.out.println(response);
@@ -100,7 +100,7 @@ public class MLTest {
     HttpRequestFactory requestFactory = httpTransport.createRequestFactory(credential);
 
     Set<Future<HttpResponse>> futures = new HashSet<>();
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 25; i++) {
       HttpRequest request = requestFactory.buildPostRequest(url, content);
       futures.add(request.executeAsync());
     }

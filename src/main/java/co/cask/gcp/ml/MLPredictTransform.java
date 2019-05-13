@@ -30,9 +30,9 @@ import javax.ws.rs.Path;
 @Description(co.cask.gcp.ml.MLPredictTransform.DESCRIPTION)
 public class MLPredictTransform extends Transform<StructuredRecord, StructuredRecord> {
 
-  public static final String NAME = "SpeechToText";
-  public static final String DESCRIPTION = "Converts audio files to text by applying powerful " +
-      "neural network models.";
+  public static final String NAME = "MLPredict";
+  public static final String DESCRIPTION = "Runs Cloud ML Prediction using the Online API on each" +
+      " record.";
 
   private Config config;
   private Schema outputSchema = null;
